@@ -1,0 +1,13 @@
+# Django and REST Framework
+Django>=4.2,<5.0
+djangorestframework>=3.14.0
+djangorestframework-simplejwt>=5.3.0
+django-cors-headers>=4.3.0
+
+# Production server
+gunicorn>=21.2.0
+
+# Development
+python-dotenv>=1.0.0
+
+# Database (already using SQLite, no extra packages needed for basic usage)
