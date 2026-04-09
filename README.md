@@ -162,13 +162,41 @@ The system matches tickets to agents based on:
 
 ## 🚀 Deployment
 
-### Docker Deployment (Recommended)
+### Production Deployment
+
+#### Backend - Railway
+The backend is configured for deployment on Railway.
+
+**Quick Steps:**
+1. Sign up at [railway.app](https://railway.app)
+2. Create a new project from GitHub repo
+3. Add environment variables in Railway dashboard:
+   - `SECRET_KEY`: A secure random string
+   - `DEBUG`: `False`
+   - `ALLOWED_HOSTS`: Your Railway domain
+4. Deploy - Railway will auto-detect the Dockerfile
+5. Get your Railway URL and update frontend `.env.production`
+
+📖 **Detailed Guide:** See [DEPLOYMENT.md](DEPLOYMENT.md)
+
+**Or use GitHub Actions for automated deployment**
+
+#### Frontend - GitHub Pages
+The frontend automatically deploys to GitHub Pages via GitHub Actions.
+
+**Live URL:** `https://amirhj110.github.io/customer-support-ticket-system`
+
+The frontend connects to the Railway backend (update URL in `frontend/.env.production`)
+
+---
+
+### Docker Deployment (Alternative)
 
 1. Clone the repository
 2. Update `SECRET_KEY` in production
 3. Run `docker-compose up -d`
 
-### Manual Deployment
+### Manual Deployment (Development)
 
 #### Backend
 ```bash
