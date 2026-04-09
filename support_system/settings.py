@@ -157,7 +157,8 @@ SIMPLE_JWT = {
 
 
 # CORS settings - Allow frontend to access API
-CORS_ALLOW_ALL_ORIGINS = DEBUG  # Only True in development
+# Allow all origins in production for Railway (restrict in production if needed)
+CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
@@ -165,6 +166,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5173",
     "https://amirhj110.github.io",
     "https://amirhj110.github.io/customer-support-ticket-system",
+    "https://frontend-production-8fd1f.up.railway.app",
 ]
 
 # Allow Railway preview URLs (they have dynamic subdomains)
