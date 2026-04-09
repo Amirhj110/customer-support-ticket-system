@@ -16,9 +16,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.http import JsonResponse
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
+
+def home(request):
+    """Simple home view to verify backend is running."""
+    return JsonResponse({
+        'status': 'success',
+        'message': 'Backend is Running',
+        'service': 'Customer Support Ticket System API'
+    })
+
+
 urlpatterns = [
+    path('', home, name='home'),
     path('admin/', admin.site.urls),
     path('api/', include('tickets.urls')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
